@@ -38,8 +38,24 @@ vector<string> v8{10, "hi"}; // v8 has ten elements with value "hi"
 ## 3.3. Vector
 vector 对象（以及 string 对象）的下标运算符用于访问已存在的元素，而不能用于添加元素
 
+## 4.9. *sizeof* operator
+指针占几个字节？
 
-# 深 / 浅拷贝
+16 位系统：2
+
+32 位系统：4
+
+64 位系统：8
+
+```cpp
+int x[10];   int *p = x; // convert x to a pointer to the first element
+cout << sizeof(x)/sizeof(*x) << endl; // 10
+cout << sizeof(p)/sizeof(*p) << endl; // 8 / 4 on the 64-bit machine 
+```
+
+
+## 深 / 浅拷贝
 当一个类中包含动态分配的资源时，浅拷贝将不会分配第二份资源，使得拷贝后的对象和之前的对象指向相同的一份资源（如数组）。
 
 <ruby>交换机<rt>Switch</rt></ruby>
+
